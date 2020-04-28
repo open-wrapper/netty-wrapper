@@ -6,12 +6,11 @@
 
 ## 使用
 
-1. 下载源码
-2. 编译执行 
+1. 下载源码,编译执行 
         
         mvn clean install -Dmaven.test.skip=true -Dmaven.javaDoc.skip=true
 
-3. 使用依赖
+2. 使用依赖
 
             <dependency>
                 <groupId>com.wrapper.netty</groupId>
@@ -32,18 +31,21 @@
 
 ## 模块介绍
 
-1. netty
+1. netty-all
     - 打包实现
-2. netty-all
-3. netty-common
-7. netty-inner
-    - 核心的魔改代码（示例）
+2. netty-common
+    - 可选用于定义公共类
+3. netty-inner
+    - 核心的魔改代码
 
 ### netty-inner
 
 inner作为最为核心的模块，本质上通过覆盖的策略，去过滤掉来自netty的类。
 
 1. 魔改后定制你想要向netty的植入逻辑
+
+本工程中为netty中的HttpMessage额外的增加了一个default方法，无实际作用，但是提供了读者参考
+对netty进行变更的操作
 
 ### 关于使用
 
